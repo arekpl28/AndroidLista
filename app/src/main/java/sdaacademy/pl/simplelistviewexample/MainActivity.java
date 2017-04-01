@@ -20,7 +20,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PersonProvider provider = new PersonProvider();
+
+        PersonProvider provider = new FilePersonProvider(getResources());
+
+
+//        PersonProvider provider = new PersonProvider();
         List<Person> persons = provider.provide();
 
         PersonAdapter personAdapter = new PersonAdapter(persons);
